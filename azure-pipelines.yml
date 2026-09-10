@@ -25,6 +25,11 @@ stages:
       displayName: 'Use .NET SDK $(dotnetSdkVersion)'
       inputs:
         version: '$(dotnetSdkVersion)'
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          node -v
 
     - task: Npm@1
       displayName: 'Run npm install'
